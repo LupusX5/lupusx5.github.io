@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="nav__logo">Xpenses</a>
+            <ul class="nav__menu">
+                <li class="nav__menu-item">📜 Расходы</li>
+                <li class="nav__menu-item">🏦 Конвертер валют</li>
+                <li class="nav__menu-item">✍️ Должники</li>
+            </ul>
+            <ul class="nav__currencies">
+                <li class="currency">EUR <span class="currency__rate" id="eur_rate"></span></li>
+                <li class="currency">USD <span class="currency__rate" id="usd_rate"></span></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="expenses-table">
+            <h3 class="expenses-table__title">📜 Расходы</h3>
+            <table class="expenses-list">
+                <thead>
+                    <tr>
+                        <th>Тип</th>
+                        <th>Название</th>
+                        <th>Дата</th>
+                        <th>Сумма</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody id="expenseTable">
+                    <tr>
+                        <td colspan="5">No expense items yet! Please add one up top...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="expenses-form">
+            <h3 class="expenses-table__title">Добавьте статью расхода</h3>
+            <div class="form">
+                <form id="expenses-form__data" autocomplete="off" >
+                    <div class="form-line">
+                        <span for="type">Вид:</span>
+                        <select id="type" required required="required">
+                            <option value="chooseOne" disabled selected hidden>Статья расхода</option>
+                            <option value="карта">Карта</option>
+                            <option value="наличные">Наличные</option>
+                            <option value="перевод">Перевод</option>
+                            <option value="другое">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-line">
+                        <span for="name">Название:</span>
+                        <input type="text" id="name" required maxlength="60">
+                    </div>
+                    <div class="inner-form-group">
+                        <div class="form-line">
+                            <span for="date">Дата:</span>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-line">
+                            <span for="amount">Сумма в ₽:</span>
+                            <input type="number" id="amount" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="button-save">Добавить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/rates-min.js">
+
+    </script>
+    <script src="js/main-min.js">
+
+    </script>
+</body>
+</html>
